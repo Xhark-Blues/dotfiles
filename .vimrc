@@ -43,6 +43,8 @@ let g:indentLine_char = '·'
 set switchbuf=usetab
 set t_Co=256
 set laststatus=2
+nnoremap <F2> :mks! <CR>
+nnoremap <F3> :source Session.vim <CR>
 nnoremap <c-n> :NERDTreeToggle<CR>
 nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
