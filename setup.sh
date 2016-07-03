@@ -2,19 +2,32 @@
 
 CURRENT_DIR=`pwd -P`
 
-rm -fr $HOME/.vimrc
-ln -s $CURRENT_DIR/.vimrc $HOME/.vimrc
-
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 
+# SETUP PLUGIN LOADERS
+echo DOWNLOADING/UPDATING PLUGIN LOADERS
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+if [ ! -d $HOME/.tmux/plugins/tpm/.git ]
+then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+    cd ~/.tmux/plugins/tpm
+    git pull https://github.com/tmux-plugins/tpm
+fi
+echo PLUGIN LOADERS UPDATED
+
+# LINK CONFIGURATIONS
+echo LINKING CONFIGURATIONS...
 rm -fr ~/.tmux.conf
 ln -s $CURRENT_DIR/.tmux.conf $HOME/.tmux.conf
 
-mkdir -p $HOME/.config/fish
-rm -fr $HOME/.config/fish/config.fish
-ln -s $CURRENT_DIR/config.fish $HOME/.config/fish/config.fish
+mkdir -p $XDG_CONFIG_HOME/fish
+rm -fr $XDG_CONFIG_HOME/fish/config.fish
+ln -s $CURRENT_DIR/config.fish $XDG_CONFIG_HOME/fish/config.fish
 
-rm -fr $XDG_CONFIG_HOME/nvim
-ln -s ~/.vim $XDG_CONFIG_HOME/nvim
 rm -fr $XDG_CONFIG_HOME/nvim/init.vim
-ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+ln -s $CURRENT_DIR/init.vim $XDG_CONFIG_HOME/nvim/init.vim
+
+echo CONFIGURATIONS LINKED.
