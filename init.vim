@@ -10,10 +10,15 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'Yggdroot/indentLine'
 "Plug 'christoomey/vim-tmux-navigator'
 "Plug 'Valloric/YouCompleteMe'
-Plug 'Quramy/tsuquyomi'
+"Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/unite.vim'
+Plug 'mhartington/vim-typings'
 
 call plug#end()
 
@@ -39,8 +44,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
 
+let cwd = getcwd()
+
 " Show hidden files when searching with ctrlp
 let g:ctrlp_show_hidden = 1
+set shell=sh
 
 " Save and load sessions
 nnoremap <F2> :mks! <CR>
@@ -49,12 +57,28 @@ nnoremap <F3> :source Session.vim <CR>
 " Unselect text after search
 nnoremap <Esc> :noh <CR>
 
+" Reload config
+nnoremap <c-r> :so $MYVIMRC <CR>
+
 nnoremap <c-n> :NERDTreeToggle<CR>
 nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
 
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+"nnoremap <c-j> <c-w>j
+"nnoremap <c-k> <c-w>k
+"nnoremap <c-h> <c-w>h
+"nnoremap <c-l> <c-w>l
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsc', 'tslint']
+let g:syntastic_typescript_tsc_args = ''
+let g:syntastic_typescript_tsc_fname = ''

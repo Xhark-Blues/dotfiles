@@ -16,6 +16,9 @@ else
     cd ~/.tmux/plugins/tpm
     git pull https://github.com/tmux-plugins/tpm
 fi
+
+curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+
 echo PLUGIN LOADERS UPDATED
 
 # LINK CONFIGURATIONS
