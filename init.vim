@@ -8,7 +8,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'Yggdroot/indentLine'
-"Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
@@ -19,6 +19,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/unite.vim'
 Plug 'mhartington/vim-typings'
+Plug 'suan/vim-instant-markdown'
+
 
 call plug#end()
 
@@ -64,10 +66,11 @@ nnoremap <c-n> :NERDTreeToggle<CR>
 nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
 
-"nnoremap <c-j> <c-w>j
-"nnoremap <c-k> <c-w>k
-"nnoremap <c-h> <c-w>h
-"nnoremap <c-l> <c-w>l
+" Easy navigation through splits
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

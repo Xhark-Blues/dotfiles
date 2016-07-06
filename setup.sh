@@ -33,4 +33,8 @@ ln -s $CURRENT_DIR/config.fish $XDG_CONFIG_HOME/fish/config.fish
 rm -fr $XDG_CONFIG_HOME/nvim/init.vim
 ln -s $CURRENT_DIR/init.vim $XDG_CONFIG_HOME/nvim/init.vim
 
+rm -fr $HOME/$TERM.ti
+
+ln -s $CURRENT_DIR/$TERM.ti $HOME/$TERM.ti
+
 echo CONFIGURATIONS LINKED.
