@@ -67,10 +67,10 @@ nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
 
 " Easy navigation through splits
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+"nnoremap <c-j> <c-w>j
+"nnoremap <c-k> <c-w>k
+"nnoremap <c-h> <c-w>h
+"nnoremap <c-l> <c-w>l
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
