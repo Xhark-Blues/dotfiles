@@ -17,8 +17,6 @@ else
     git pull https://github.com/tmux-plugins/tpm
 fi
 
-curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
-
 echo PLUGIN LOADERS UPDATED
 
 # LINK CONFIGURATIONS
@@ -26,9 +24,10 @@ echo LINKING CONFIGURATIONS...
 rm -fr ~/.tmux.conf
 ln -s $CURRENT_DIR/.tmux.conf $HOME/.tmux.conf
 
-mkdir -p $XDG_CONFIG_HOME/fish
-rm -fr $XDG_CONFIG_HOME/fish/config.fish
-ln -s $CURRENT_DIR/config.fish $XDG_CONFIG_HOME/fish/config.fish
+rm -fr ~/.zshrc
+ln -s $CURRENT_DIR/.zshrc $HOME/.zshrc
+rm -fr ~/.antigen.zsh
+ln -s $CURRENT_DIR/antigen/antigen.zsh $HOME/.antigen.zsh
 
 rm -fr $XDG_CONFIG_HOME/nvim/init.vim
 ln -s $CURRENT_DIR/init.vim $XDG_CONFIG_HOME/nvim/init.vim
