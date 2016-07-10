@@ -23,7 +23,7 @@ antigen apply
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
  else
-   export EDITOR='mvim'
+   export EDITOR='nvim'
  fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
