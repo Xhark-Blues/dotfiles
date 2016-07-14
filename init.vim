@@ -20,7 +20,7 @@ Plug 'scrooloose/syntastic'
 Plug 'Shougo/unite.vim'
 Plug 'mhartington/vim-typings'
 Plug 'suan/vim-instant-markdown'
-
+Plug 'derekwyatt/vim-scala'
 
 call plug#end()
 
@@ -85,3 +85,5 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_typescript_checkers = ['tsc', 'tslint']
 let g:syntastic_typescript_tsc_args = ''
 let g:syntastic_typescript_tsc_fname = ''
+
+com! FormatJSON %!python -m json.tool
