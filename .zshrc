@@ -2,6 +2,8 @@
 #Antigen
 source $HOME/.antigen.zsh
 
+export TERM=screen-256color
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 antigen bundle git
