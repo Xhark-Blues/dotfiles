@@ -1,3 +1,4 @@
+
 #Antigen
 source $HOME/.antigen.zsh
 
@@ -15,15 +16,15 @@ antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Geometry theme
-antigen bundle frmendes/geometry
+# antigen bundle af-magic
 
 antigen apply
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='nvim'
- fi
+export EDITOR='nvim'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+
+export PATH=$PATH:~/.local/bin:~/.cabal/bin
+
+export NVM_DIR="/Users/istar/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
