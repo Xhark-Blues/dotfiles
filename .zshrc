@@ -18,7 +18,7 @@ antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Geometry theme
-# antigen bundle af-magic
+antigen theme gallifrey
 
 antigen apply
 
