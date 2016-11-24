@@ -38,4 +38,13 @@ ln -s $CURRENT_DIR/.gitconfig $HOME/.gitconfig
 rm -fr $HOME/$TERM.ti
 ln -s $CURRENT_DIR/$TERM.ti $HOME/$TERM.ti
 
+rm -fr $HOME/.xinitrc
+ln -s $CURRENT_DIR/.xinitrc $HOME/.xinitrc
+
+rm -fr $HOME/.xbindkeysrc
+ln -s $CURRENT_DIR/.xbindkeysrc $HOME/.xbindkeysrc
+
+rm -fr $HOME/.local/bin
+ln -s $CURRENT_DIR/bin $HOME/.local/bin
+
 echo CONFIGURATIONS LINKED.

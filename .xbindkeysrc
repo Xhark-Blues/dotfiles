@@ -89,6 +89,10 @@
   "import ""$(date +"%d-%m_%H:%m:%S").png""
     XF86Display
 
+# Setup screen
+  "setup_dp_screen"
+    XF86Launch1
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
