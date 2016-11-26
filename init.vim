@@ -29,7 +29,9 @@ syntax on
 set number
 set ruler
 filetype plugin indent on
- "show existing tab with 4 spaces width
+
+set encoding=utf-8
+"show existing tab with 4 spaces width
 set tabstop=2
  " when indenting with '>', use 4 spaces width
 set shiftwidth=2
