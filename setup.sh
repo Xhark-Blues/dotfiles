@@ -47,4 +47,10 @@ ln -s $CURRENT_DIR/.xbindkeysrc $HOME/.xbindkeysrc
 rm -fr $HOME/.local/bin
 ln -s $CURRENT_DIR/bin $HOME/.local/bin
 
+rm -fr $XDG_CONFIG_HOME/roxterm.sourceforge.net
+ln -s $CURRENT_DIR/roxterm.sourceforge.net $XDG_CONFIG_HOME/roxterm.sourceforge.net
+
+rm -fr $XDG_CONFIG_HOME/i3
+ln -s $CURRENT_DIR/i3 $XDG_CONFIG_HOME/i3
+
 echo CONFIGURATIONS LINKED.
