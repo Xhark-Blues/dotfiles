@@ -33,4 +33,6 @@ export NVM_DIR="/Users/istar/.nvm"
 
 export GPG_TTY=`tty`
 
+eval $(ssh-agent)
+
 tic ~/$TERM.ti
