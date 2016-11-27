@@ -53,4 +53,12 @@ ln -s $CURRENT_DIR/roxterm.sourceforge.net $XDG_CONFIG_HOME/roxterm.sourceforge.
 rm -fr $XDG_CONFIG_HOME/i3
 ln -s $CURRENT_DIR/i3 $XDG_CONFIG_HOME/i3
 
+cd $CURRENT_DIR/i3/bar-stats
+npm run setup
+cd $CURRENT_DIR
+
+chmod +x $CURRENT_DIR/i3/bar-stats/dist/cli.js
+rm -fr $CURRENT_DIR/bin/bar-stats
+ln -s $CURRENT_DIR/i3/bar-stats/dist/cli.js $CURRENT_DIR/bin/bar-stats
+
 echo CONFIGURATIONS LINKED.
