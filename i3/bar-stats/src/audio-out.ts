@@ -6,5 +6,7 @@ const execAsync = promisify(exec);
 
 export default async function audio() {
   const audio = Number(await execAsync('ponymix get-volume'));
-  return `${audio}% \uf028`;
+  const muted = await execAsync('ponymix is-muted').then(r => true).catch(e => false);
+  console.log(muted);
+  return `${audio}% ${ muted ? '\uf026' : '\uf028'}`;
 }
