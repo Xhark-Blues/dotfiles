@@ -5,6 +5,6 @@ const activeInterface = promisify(get_active_interface);
 
 export default function network() {
   return activeInterface()
-    .then((i:any) => `\uf0e8 ${i.name}`)
+    .then((i:any) => `${i.name} \uf0e8`)
     .catch(e => null);
 }

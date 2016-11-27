@@ -8,5 +8,5 @@ promisifyAll(dock);
 export default async function docker() {
   const containers = await dock.listContainersAsync();
 
-  return `\uf085 ${containers.length}`;
+  return `${containers.length} \uf085`;
 }
