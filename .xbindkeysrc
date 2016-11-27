@@ -65,6 +65,10 @@
 #"rxvt"
 #  Control + b:2 + Release
 
+# Mute - Unmute mic
+  "ponymix --source toggle"
+   XF86AudioMicMute
+
 # Mute - Unmute
  "ponymix toggle"
    XF86AudioMute
@@ -92,6 +96,15 @@
 # Setup screen
   "setup_dp_screen"
     XF86Launch1
+
+# Toggle WLAN
+  "if [ $(cat /sys/class/rfkill/rfkill3/soft) -eq 1 ]; then rfkill unblock 3; else rfkill block 3; fi"
+    XF86WLAN
+
+# Toggle bluetooth
+  "if [ $(cat /sys/class/rfkill/rfkill0/soft) -eq 1 ]; then rfkill unblock 0; else rfkill block 0; fi"
+    Shift + XF86WLAN
+
 
 ##################################
 # End of xbindkeys configuration #
