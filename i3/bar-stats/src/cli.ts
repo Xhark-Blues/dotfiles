@@ -10,7 +10,6 @@ import battery from './battery';
 import time from './time';
 
 setInterval(async () => {
-  const dock = await docker();
   const toPrint = await reduce([docker(), network(), audio_in(), audio_out(),battery(), time()], (acc, stat, i) => {
     if(stat) {
       return acc + (i ? ' : ' : '') + stat
