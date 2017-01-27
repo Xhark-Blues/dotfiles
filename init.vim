@@ -20,8 +20,10 @@ Plug 'scrooloose/syntastic'
 Plug 'Shougo/unite.vim'
 Plug 'mhartington/vim-typings'
 Plug 'suan/vim-instant-markdown'
-
+Plug 'rust-lang/rust.vim'
 Plug 'eagletmt/ghcmod-vim'
+Plug 'alunny/pegjs-vim'
+Plug 'nono/vim-handlebars'
 
 call plug#end()
 
