@@ -1,14 +1,14 @@
 [user]
-	email = me@ruben.io
+  email = me@ruben.io
   name = Ruben Paz
   signkey = 84B30D23
 [commit]
-	gpgsign = true
+  gpgsign = true
 [alias]
-	co = checkout
-	br = branch
-	ci = commit --message
-	st = status
-	cod = checkout development
-	com = checkout master
-	last = log -1 HEAD
+  co = checkout
+  br = branch
+  ci = commit --message
+  st = status
+  cod = checkout development
+  com = checkout master
+  last = log -1 HEAD
