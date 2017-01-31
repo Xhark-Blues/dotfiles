@@ -1,0 +1,13 @@
+[user]
+	email = me@ruben.io
+	name = Ruben Paz
+[commit]
+	gpgsign = true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit --message
+	st = status
+	cod = checkout development
+	com = checkout master
+	last = log -1 HEAD
