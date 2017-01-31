@@ -1,6 +1,7 @@
 [user]
 	email = me@ruben.io
-	name = Ruben Paz
+  name = Ruben Paz
+  signkey = 84B30D23
 [commit]
 	gpgsign = true
 [alias]
