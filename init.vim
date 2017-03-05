@@ -24,6 +24,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'alunny/pegjs-vim'
 Plug 'nono/vim-handlebars'
+Plug 'raichoo/purescript-vim'
 
 call plug#end()
 
