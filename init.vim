@@ -86,6 +86,8 @@ nnoremap <c-n> :NERDTreeToggle<CR>
 nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
 
+autocmd FileType typescript nnoremap <c-u> :echo tsuquyomi#hint()<CR>
+
 " Easy navigation through splits
 " nnoremap <c-j> <c-w>j
 " nnoremap <c-k> <c-w>k
