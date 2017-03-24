@@ -23,6 +23,7 @@ antigen theme gallifrey
 
 antigen apply
 
+# Use vim as editor
 export EDITOR='nvim'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
@@ -37,5 +38,17 @@ export GPG_TTY=`tty`
 eval $(ssh-agent)
 
 . /home/istar/.nix-profile/etc/profile.d/nix.sh
+
+function dme() {
+  if [ "$1" != "" ]
+  then
+    eval $(docker-machine env "$1");
+  else
+    eval $(docker-machine env --unset);
+  fi
+}
+
+export AWS_ACCESS_KEY=$(pass show repositive/aws/access)
+export AWS_SECRET_ACCESS_KEY=$(pass show repositive/aws/secret)
 
 tic ~/$TERM.ti
