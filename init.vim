@@ -11,13 +11,14 @@ Plug 'Yggdroot/indentLine'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'Shougo/vimproc.vim'
+Plug 'w0rp/ale'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'Shougo/unite.vim'
 Plug 'mhartington/vim-typings'
 Plug 'suan/vim-instant-markdown'
@@ -95,18 +96,20 @@ autocmd FileType typescript nnoremap <c-u> :echo tsuquyomi#hint()<CR>
 " nnoremap <c-l> <c-w>l
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{ALEGetStatusLine()}
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi']
-let g:syntastic_typescript_tsc_args = ''
-let g:syntastic_typescript_tsc_fname = ''
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 1
+"
+"let g:tsuquyomi_disable_quickfix = 1
+"let g:syntastic_typescript_checkers = ['tsuquyomi']
+"let g:syntastic_typescript_tsc_args = ''
+"let g:syntastic_typescript_tsc_fname = ''
 
 com! FormatJSON %!python -m json.tool
 " show quotes on json objects
