@@ -3,7 +3,7 @@
 source $HOME/.antigen.zsh
 
 export TERM=screen-256color
-export BROWSER=firefox
+export BROWSER=chromium
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -39,16 +39,25 @@ eval $(ssh-agent)
 
 . /home/istar/.nix-profile/etc/profile.d/nix.sh
 
-function dme() {
+##
+# Kubernetes and DevOps
+##
+
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
+function kenv() {
+
   if [ "$1" != "" ]
   then
-    eval $(docker-machine env "$1");
+    export AWS_ACCESS_KEY=$(pass show repositive/aws/access)
+    export AWS_SECRET_ACCESS_KEY=$(pass show repositive/aws/secret)
+    export KOPS_STATE_STORE="s3://k8s-$1-state-store"
+    kops export kubecfg "k8s-$1.repositive.io"
   else
-    eval $(docker-machine env --unset);
+    unset KOPS_STATE_STORE
   fi
 }
-
-export AWS_ACCESS_KEY=$(pass show repositive/aws/access)
-export AWS_SECRET_ACCESS_KEY=$(pass show repositive/aws/secret)
 
 tic ~/$TERM.ti
