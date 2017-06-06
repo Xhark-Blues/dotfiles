@@ -1,9 +1,0 @@
-[roxterm profile]
-font=SauceCodePro Nerd Font Medium 10
-scrollbar_pos=0
-browser=firefox
-hide_menubar=1
-show_add_tab_btn=0
-always_show_tabs=0
-colour_scheme=solarized-dark
-saturation=1.000000
