@@ -2,7 +2,9 @@
 #Antigen
 source $HOME/.antigen.zsh
 
-export TERM=screen-256color
+# export TERM=screen-256color
+# tic ~/$TERM.ti
+
 export BROWSER=chromium
 
 # Load the oh-my-zsh's library.
@@ -84,5 +86,3 @@ function dme() {
 if [[ $TERM = dumb ]]; then
   unset zle_bracketed_paste
 fi
-
-tic ~/$TERM.ti
