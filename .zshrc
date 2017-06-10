@@ -47,17 +47,42 @@ if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
 
-function kenv() {
-
-  if [ "$1" != "" ]
+function setupAWS() {
+  if [ "$1" = "--unset" ]
   then
+    unset AWS_ACCESS_KEY
+    unset AWS_SECRET_ACCESS_KEY
+  else
     export AWS_ACCESS_KEY=$(pass show repositive/aws/access)
     export AWS_SECRET_ACCESS_KEY=$(pass show repositive/aws/secret)
+  fi
+}
+
+function kenv() {
+  if [ "$1" != "" ]
+  then
+    setupAWS
     export KOPS_STATE_STORE="s3://k8s-$1-state-store"
     kops export kubecfg "k8s-$1.repositive.io"
   else
+    setupAWS --unset
     unset KOPS_STATE_STORE
   fi
 }
+
+function dme() {
+  if [ "$1" != "" ]
+  then
+     setupAWS
+     eval $(docker-machine env "$1");
+  else
+    setupAWS --unset
+    eval $(docker-machine env --unset);
+  fi
+}
+
+if [[ $TERM = dumb ]]; then
+  unset zle_bracketed_paste
+fi
 
 tic ~/$TERM.ti
