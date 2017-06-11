@@ -21,7 +21,7 @@ Plug 'ryanoasis/vim-devicons'
 "Plug 'scrooloose/syntastic'
 Plug 'Shougo/unite.vim'
 Plug 'mhartington/vim-typings'
-Plug 'suan/vim-instant-markdown'
+Plug 'shime/vim-livedown'
 Plug 'rust-lang/rust.vim'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'alunny/pegjs-vim'
@@ -36,11 +36,11 @@ set ruler
 filetype plugin indent on
 
 set encoding=utf-8
-"show existing tab with 4 spaces width
+"show existing tab with 2 spaces width
 set tabstop=2
- " when indenting with '>', use 4 spaces width
+ " when indenting with '>', use 2 spaces width
 set shiftwidth=2
- " On pressing tab, insert 4 spaces
+ " On pressing tab, insert 2 spaces
 set expandtab
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -54,6 +54,9 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
+
+" Automatically run markdown previews
+let g:livedown_autorun = 1
 
 "if (empty($TMUX))
 "    if (has("nvim"))
@@ -98,6 +101,8 @@ autocmd FileType typescript nnoremap <c-u> :echo tsuquyomi#hint()<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{ALEGetStatusLine()}
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
