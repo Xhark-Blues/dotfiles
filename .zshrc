@@ -32,8 +32,11 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
 export PATH=$PATH:~/.local/bin:~/.cabal/bin:~/.gem/ruby/2.4.0/bin
 
-export NVM_DIR="/Users/istar/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# NVM ON Linux
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
 
 export GPG_TTY=`tty`
 
