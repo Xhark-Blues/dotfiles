@@ -6,10 +6,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'Yggdroot/indentLine'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'Valloric/YouCompleteMe'
+Plug 'ajmwagar/vim-dues'
 Plug 'Shougo/vimproc.vim'
 Plug 'w0rp/ale'
 Plug 'Quramy/tsuquyomi'
@@ -22,11 +22,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Shougo/unite.vim'
 Plug 'mhartington/vim-typings'
 Plug 'shime/vim-livedown'
-Plug 'rust-lang/rust.vim'
-Plug 'eagletmt/ghcmod-vim'
 Plug 'alunny/pegjs-vim'
 Plug 'nono/vim-handlebars'
-Plug 'raichoo/purescript-vim'
 
 call plug#end()
 
@@ -47,7 +44,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Styles
 set t_Co=256
 set background=dark
-colorscheme solarized8_dark_high
+colorscheme dues
 let g:indentLine_color_term = 24
 let g:indentLine_char = '·'
 set laststatus=2
