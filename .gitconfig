@@ -1,9 +1,6 @@
 [user]
-  email = me@ruben.io
-  name = Ruben Paz
-  signkey = 84B30D23
-[commit]
-  gpgsign = true
+  email = martinrubio23@gmail.com
+  name = Martin Rubio
 [alias]
   co = checkout
   br = branch

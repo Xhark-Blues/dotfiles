@@ -33,16 +33,14 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 export PATH=$PATH:~/.local/bin:~/.cabal/bin:~/.gem/ruby/2.4.0/bin
 
 # NVM ON Linux
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
+export NVM_DIR="$HOME/.nvm"
+source $NVM_DIR/nvm.sh
+source $NVM_DIR/bash_completion
 
 export GPG_TTY=`tty`
 
 eval $(ssh-agent)
 
-. /home/istar/.nix-profile/etc/profile.d/nix.sh
 
 ##
 # Kubernetes and DevOps
