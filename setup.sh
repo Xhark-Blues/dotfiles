@@ -44,4 +44,7 @@ ln -s $CURRENT_DIR/.xbindkeysrc $HOME/.xbindkeysrc
 rm -fr $HOME/.local/bin
 ln -s $CURRENT_DIR/bin $HOME/.local/bin
 
+rm -fr $HOME/.npmrc
+ln -s $CURRENT_DIR/.npmrc $HOME/.npmrc
+
 echo CONFIGURATIONS LINKED.
