@@ -35,9 +35,6 @@ ln -s $CURRENT_DIR/init.vim $XDG_CONFIG_HOME/nvim/init.vim
 rm -fr ~/.gitconfig
 ln -s $CURRENT_DIR/.gitconfig $HOME/.gitconfig
 
-rm -fr $HOME/$TERM.ti
-ln -s $CURRENT_DIR/$TERM.ti $HOME/$TERM.ti
-
 rm -fr $HOME/.xinitrc
 ln -s $CURRENT_DIR/.xinitrc $HOME/.xinitrc
 
@@ -46,19 +43,5 @@ ln -s $CURRENT_DIR/.xbindkeysrc $HOME/.xbindkeysrc
 
 rm -fr $HOME/.local/bin
 ln -s $CURRENT_DIR/bin $HOME/.local/bin
-
-rm -fr $XDG_CONFIG_HOME/roxterm.sourceforge.net
-ln -s $CURRENT_DIR/roxterm.sourceforge.net $XDG_CONFIG_HOME/roxterm.sourceforge.net
-
-rm -fr $XDG_CONFIG_HOME/i3
-ln -s $CURRENT_DIR/i3 $XDG_CONFIG_HOME/i3
-
-cd $CURRENT_DIR/i3/bar-stats
-npm run setup
-cd $CURRENT_DIR
-
-chmod +x $CURRENT_DIR/i3/bar-stats/dist/cli.js
-rm -fr $CURRENT_DIR/bin/bar-stats
-ln -s $CURRENT_DIR/i3/bar-stats/dist/cli.js $CURRENT_DIR/bin/bar-stats
 
 echo CONFIGURATIONS LINKED.
