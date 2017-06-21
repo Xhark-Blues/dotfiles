@@ -5,6 +5,9 @@ source $HOME/.antigen.zsh
 # export TERM=screen-256color
 # tic ~/$TERM.ti
 
+# Autrun tmux
+[[ $TERM != "screen-256color" ]] && exec tmux
+
 export BROWSER=chromium
 
 # Load the oh-my-zsh's library.
