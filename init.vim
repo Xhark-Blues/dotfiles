@@ -10,7 +10,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'ajmwagar/vim-dues'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 Plug 'w0rp/ale'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
@@ -24,7 +24,7 @@ Plug 'mhartington/vim-typings'
 Plug 'shime/vim-livedown'
 Plug 'alunny/pegjs-vim'
 Plug 'nono/vim-handlebars'
-
+Plug 'diepm/vim-rest-console'
 call plug#end()
 
 syntax on
@@ -50,23 +50,10 @@ let g:indentLine_char = '·'
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
+let g:airline_theme='cool'
 
 " Automatically run markdown previews
 let g:livedown_autorun = 1
-
-"if (empty($TMUX))
-"    if (has("nvim"))
-"        "For Neovim 0.1.3 and 0.1.4
-"        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"    endif
-"
-"    "For Neovim 0.1.5+ and Vim 7.4.1799+
-"    if (has("termguicolors"))
-"        set termguicolors
-"    endif
-"endif
-
 let cwd = getcwd()
 
 " Show hidden files when searching with ctrlp
@@ -98,8 +85,8 @@ autocmd FileType typescript nnoremap <c-u> :echo tsuquyomi#hint()<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{ALEGetStatusLine()}
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_save = 0
+let g:ale_lint_on_text_changed = 1
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
@@ -113,6 +100,24 @@ set statusline+=%*
 "let g:syntastic_typescript_tsc_args = ''
 "let g:syntastic_typescript_tsc_fname = ''
 
+imap <C-Space> <C-x><C-o>
+
 com! FormatJSON %!python -m json.tool
 " show quotes on json objects
 set conceallevel=0
+
+" VIM-REST-CONSOLE (#2975)
+" Allow GET requests to have body
+"   note: vrc_split_request_body is ignored (= 0) when this is set (= 1)
+let g:vrc_allow_get_request_body = 1
+" Enable automatic formatting of the response
+let g:vrc_auto_format_response_enabled = 1
+" Include response header
+let g:vrc_include_response_header = 1
+" Print executed curl command
+let g:vrc_show_command = 1
+" Set trigger key (<C-j> by default)
+let g:vrc_trigger = ',,sr'
+
+
+set timeoutlen=1000 ttimeoutlen=0

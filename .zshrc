@@ -6,7 +6,7 @@ source $HOME/.antigen.zsh
 # tic ~/$TERM.ti
 
 # Autrun tmux
-[[ $TERM != "screen-256color" ]] && exec tmux
+[[ $TERM != "screen-256color" ]] && exec tmux attach
 
 export BROWSER=chromium
 
@@ -90,3 +90,5 @@ function dme() {
 if [[ $TERM = dumb ]]; then
   unset zle_bracketed_paste
 fi
+
+KEYTIMEOUT=1
