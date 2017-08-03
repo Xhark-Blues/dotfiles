@@ -25,6 +25,9 @@ Plug 'shime/vim-livedown'
 Plug 'alunny/pegjs-vim'
 Plug 'nono/vim-handlebars'
 Plug 'diepm/vim-rest-console'
+Plug 'shime/vim-livedown'
+
+
 call plug#end()
 
 syntax on
@@ -41,10 +44,13 @@ set shiftwidth=2
 set expandtab
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+" Spelling check
+set spell spelllang=en_us
+
 " Styles
 set t_Co=256
 set background=dark
-colorscheme dues
+colorscheme deus
 let g:indentLine_color_term = 24
 let g:indentLine_char = '·'
 set laststatus=2
